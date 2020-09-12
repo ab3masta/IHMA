@@ -12,10 +12,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->view_image, SIGNAL(clicked()), this, SLOT(gotToTD()));
     connect(ui->view_image_2, SIGNAL(clicked()), this, SLOT(gotToMini_Projet()));
     connect(ui->view_image_3, SIGNAL(clicked()), this, SLOT(gotToProjet()));
+    connect(ui->view_image_4, SIGNAL(clicked()), this, SLOT(gotToExample()));
     connect(ui->run_tp1, SIGNAL(clicked()), this, SLOT(goToTp1()));
     ui->view_image->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
     ui->view_image_2->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
     ui->view_image_3->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+    ui->view_image_4->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
 }
 
 MainWindow::~MainWindow()
@@ -26,6 +28,10 @@ MainWindow::~MainWindow()
 void MainWindow::gotToTD()
 {
     ui->stackedWidget->setCurrentIndex(1);
+}
+void MainWindow::gotToExample()
+{
+    ui->stackedWidget->setCurrentIndex(2);
 }
 void MainWindow::goToTp1()
 {
@@ -44,20 +50,13 @@ void MainWindow::goToTp1()
 }
 void MainWindow::gotToMini_Projet()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::gotToProjet()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(4);
 }
-
-void MainWindow::on_view_image_2_linkActivated(const QString &link)
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-
 
 
 void MainWindow::on_pushButton_3_clicked()
@@ -71,6 +70,10 @@ void MainWindow::on_pushButton_2_clicked()
 }
 
 void MainWindow::on_pushButton_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+void MainWindow::on_retour_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }

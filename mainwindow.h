@@ -21,12 +21,14 @@ private slots:
     void gotToMini_Projet();
     void gotToProjet();
     void goToTp1();
-    void on_view_image_2_linkActivated(const QString &link);
+    void gotToExample();
     void on_pushButton_3_clicked();
-
     void on_pushButton_2_clicked();
-
     void on_pushButton_4_clicked();
+
+
+
+    void on_retour_clicked();
 
 private:
     Tp1Window* tp1;
